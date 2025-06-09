@@ -1,4 +1,4 @@
-**CODING ORDER VS EXECUTION ORDER**
+# **CODING ORDER VS EXECUTION ORDER**
 
 | **Coding Order (Written By You)** | **Execution Order (Run By Database)** |
 | --------------------------------- | ------------------------------------- |
@@ -10,3 +10,4 @@
 | 6\. HAVING                        | 6\. SELECT                            |
 | 7\. ORDER BY                      | 7\. ORDER BY                          |
 | 8\. LIMIT                         | 8\. LIMIT                             |
+
