@@ -1,6 +1,24 @@
 # Data Definition Language (DDL)
 A subset of SQL commands used specifically for defining, managing, and modifying the structure (or schema) of a database.
 
+- [Data Definition Language (DDL)](#data-definition-language-ddl)
+- [1. CREATE TABLE](#1-create-table)
+  - [1.1 Defining columns](#11-defining-columns)
+  - [1.2 Data types](#12-data-types)
+- [1.3 Constraints](#13-constraints)
+- [1.4 Indexing](#14-indexing)
+- [2. ALTER TABLE](#2-alter-table)
+  - [2.1 Add Operations](#21-add-operations)
+  - [2.2 Modify Column Definitions](#22-modify-column-definitions)
+  - [2.3 Drop Operations](#23-drop-operations)
+  - [2.4 Rename Operations](#24-rename-operations)
+  - [2.5 Reorder or Position Columns](#25-reorder-or-position-columns)
+  - [2.6 Partitioning (Advanced Use)](#26-partitioning-advanced-use)
+  - [2.7 Other Advanced Options](#27-other-advanced-options)
+- [3. Truncate](#3-truncate)
+- [4. Rename](#4-rename)
+- [5. Comment](#5-comment)
+
 # 1. CREATE TABLE
 Create a new, initially empty table in the current database. The table will be owned by the user issuing the command. 
   
@@ -479,6 +497,7 @@ DROP VIEW view_name;
 ```
 
 ## DELETE vs TRUNCATE vs DROP
+
 | Feature                  | `DELETE`                  | `TRUNCATE`                            | `DROP`                          |
 | ------------------------ | ------------------------- | ------------------------------------- | ------------------------------- |
 | **What it does**         | Removes **rows**          | Removes **all rows**, resets identity | Deletes **entire table**        |
@@ -491,7 +510,9 @@ DROP VIEW view_name;
 | **Schema retention**     | ✅ Yes (structure remains) | ✅ Yes (structure remains)             | ❌ No (structure deleted)        |
 
 
+
 ## 4. Rename
+
 - Changes the name of an existing table (or database in older versions).
 - Can’t rename to an existing table name.
 - Cannot rename a table across databases.
