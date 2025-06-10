@@ -1,0 +1,7 @@
+## 7.	Ordering
+
+```sql
+SELECT *
+FROM employees
+ORDER BY hire_date DESC, salary ASC, visits DESC;
+```￼
