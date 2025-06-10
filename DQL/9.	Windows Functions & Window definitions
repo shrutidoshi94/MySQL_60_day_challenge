@@ -1,0 +1,2 @@
+## 9.	Windows Functions & Window definitions
+	•	WINDOW window_name AS (window_spec) [, …] 
