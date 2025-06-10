@@ -1,0 +1,37 @@
+# Data Query Language (DQL) - SELECT 
+A subset of SQL commands used specifically to retrieve data from one or more tables, producing a result set. 
+
+## 1.	SELECT list & Aliasing
+Comma-separated sequence of one or more expressions you place immediately after the SELECT keyword. 
+
+**What you can put in the `SELECT` list**
+- Simple column references. e.g. `user_id`, `created_at`
+- Wildcard. e.g. `*` or `t.*`
+- Literals. e.g. `42`, `'hello'`
+- Arithmetic & other expressions. e.g. `price * quantity`, `IF(status='A','Active','Inactive')`
+- Function calls  
+  - Scalar functions: `CONCAT(first_name, ' ', last_name)`  
+  - Aggregate functions: `SUM(amount)`, `COUNT(*)`  
+  - Window functions: `ROW_NUMBER() OVER (…)`, `AVG(salary) OVER (…)`  
+- Subqueries (scalar subqueries returning at most one value)
+- Any combination of the above, with optional aliasing
+  
+```sql
+SELECT
+  e.id,                                                             -- column reference
+  CONCAT(e.first_name, ' ', e.last_name) AS full_name,              -- Scalar Function
+  e.salary * 1.10                    AS increased_salary,           -- Arithmetic expression
+  ROW_NUMBER() OVER (
+    PARTITION BY e.department_id
+    ORDER BY e.hire_date
+  )                                   AS hire_seq_in_dept,          -- Windows Function
+  (SELECT MAX(salary)
+     FROM employees
+    WHERE department_id = e.department_id
+  )                                   AS max_dept_salary,           -- Subquery 
+  '2025-06-09'                        AS report_date                -- Literal
+FROM employees AS e
+WHERE e.active = 1
+ORDER BY increased_salary DESC
+LIMIT 10;
+```
