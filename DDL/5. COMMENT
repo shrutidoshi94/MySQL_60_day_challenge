@@ -1,0 +1,24 @@
+## 5. COMMENT
+- Add a comment to a table or column
+- Documents metadata for future reference (via SHOW CREATE TABLE).
+
+```sql
+CREATE TABLE employees (
+  id INT,
+  name VARCHAR(100) COMMENT 'Full name of employee'
+) COMMENT = 'Employee master data table';
+```
+
+**Add or update comment using ALTER:**
+```sql
+ALTER TABLE employees
+MODIFY name VARCHAR(100) COMMENT 'Updated full name description';
+
+ALTER TABLE employees
+COMMENT = 'Stores company employee info';
+```
+
+**View Comments**
+```sql
+SHOW CREATE TABLE employees;
+```
