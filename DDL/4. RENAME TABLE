@@ -1,0 +1,19 @@
+## 4. RENAME TABLE
+
+- Changes the name of an existing table (or database in older versions).
+- Can’t rename to an existing table name.
+- Cannot rename a table across databases.
+
+```sql
+RENAME TABLE old_name TO new_name;
+```
+
+```sql
+RENAME TABLE a TO b, c TO d; --Rename multiple tables
+```
+
+**❌ You Cannot Rename Columns with RENAME**
+Instead, use ALTER TABLE ... CHANGE or ALTER TABLE ... RENAME COLUMN.
+
+**❌ You Cannot Rename Databases with RENAME DATABASE**
+Manually create and migrate: Create new database, Export and import data, Drop old database.
