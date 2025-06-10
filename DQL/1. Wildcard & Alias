@@ -1,0 +1,38 @@
+### 1.1 Wildcard *
+Used to select all columns
+`SELECT *`
+
+### 1.2 Alais AS
+
+**Column Aliases**
+```sql
+SELECT 
+	first_name AS name 
+FROM employees;
+```
+```sql
+SELECT 
+	first_name name 
+FROM employees;
+```
+**Table Aliases**
+```sql
+SELECT 
+	e.first_name, 
+	e.salary
+FROM employees AS e;
+```
+
+**Alias in Subqueries / Derived Tables**
+
+```sql
+SELECT 
+	dept, 
+	avg_salary
+FROM 
+	(SELECT 
+		department AS dept, 
+		AVG(salary) AS avg_salary
+	FROM employees
+	GROUP BY department) AS dept_summary;
+ ```
