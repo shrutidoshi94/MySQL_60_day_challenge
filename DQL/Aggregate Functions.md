@@ -1,3 +1,5 @@
+![NO JOIN](https://github.com/user-attachments/assets/95c514ca-aa4a-45be-ab2d-b28f7cb22f2a)
+
 ## 5.3 AGGREGATE function
 
 **5.3.1 Basic Aggregate Functions**
