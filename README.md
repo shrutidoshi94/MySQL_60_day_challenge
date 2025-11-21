@@ -5,7 +5,5 @@ Welcome to the MySQL Notes repository! This document contains concise notes, com
 ## Table of Contents
 
 - Data Defintion Language
-  - [CREATE TABLE](./DDL/1.%20CREATE%20TABLE.md)
-  -
 - Data Manipulation language
 - Data Query Language
